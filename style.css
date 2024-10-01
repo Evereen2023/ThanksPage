@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --c-primary: #acacac;
+    --c-text: #cc8239;
+    --c-text-m: var(var(--c-text));
+    --c--border: var(--c-bg-3);
+    --c-bg: #5e3300;
+    --c-bg-2: #0000001f;
+    --c-bg-3: #57575736;
+    --c-bg-m: #8a8a8a33;
+    --c-text-reverse: var(--c-bg);
+    --bg-img-url: url("http://img.eseir.com/i/2024/09/17/66e91cf8e585c.jpg");
+    background-image: var(--bg-img-url);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+::selection {
+    background: var(--c-primary);
+    color: var(--c-text-reverse);
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--c-bg-2);
+    padding: 2rem 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+body>* {
+    margin: 1rem auto;
+    width: 90vw;
+    max-width: 1080px;
+}
+
+h1 {
+    color: #ffe2c5;
+}
+
+h2 {
+    color: #d6aa7d;
+}
+
+.card-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all .2s;
+    border: 1px solid var(--c--border);
+    border-radius: 2.5rem;
+    background-color: var(--c-bg-2);
+    /* background-color: var(--bg); */
+    padding: 1rem;
+    overflow: hidden;
+    color: var(--c);
+}
+
+.card:hover {
+    transform: translateY(-.1rem);
+    background-color: var(--c-bg-3);
+    color: var(--c-text);
+}
+
+.card[title]::before{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-end;
+    transition: .2s;
+    opacity: 0;
+    content: attr(title);
+    inset: 0;
+    background-image: linear-gradient(to right,var(--c-bg-3), var(--c-bg));
+    padding: 1rem;
+    pointer-events: none;
+    content: attr(title);
+    color: var(--c-text);
+}
+
+.card[title]:hover::before{
+    opacity: 1;
+}
+
+.card>img {
+    border-radius: 5rem;
+    width: 3rem;
+    min-width: 60px;
+    max-width: 400px;
+    -webkit-user-drag: none;
+    
+}
+
+.card .desc {
+    display: grid;
+    gap: .2rem;
+}
+
+.card .desc>p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card .desc>ins {
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.card .medal {
+    display: flex;
+    align-items: center;
+    color: var(--c-text-m);
+    max-width: 1.2rem; 
+    height: 1.2rem;
+    overflow: hidden;
+    border-radius: 5rem;
+    transition: all 1s;
+    border: 1px solid var(--c--border);
+    background-color: var(--c-bg-m);
+}
+
+.card .medal>p {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0 0.2em;
+}
+
+.card .medal:hover {
+    max-width: 50rem;
+}
+
+
+.card .medal>img {
+    width: 1.2rem;
+    border-radius: 5rem;
+}
+
+.hover-spin:hover{
+    animation: spin 10s ease-in infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(36000deg);
+    }
+}
+
+[onclick] {
+    cursor: pointer;
+}
