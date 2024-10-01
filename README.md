@@ -1,2 +1,2 @@
-# thanks_page
-Ｓｉｍｐｌｅ　ｔｈａｎｋｓ　ｐａｇｅ
+# Thanks Page
+A simple HTML thanks page
